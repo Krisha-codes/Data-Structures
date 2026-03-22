@@ -1,0 +1,51 @@
+class Queue
+{
+int ar[], f,r,size;
+Queue(int m)
+{
+size=m;
+ar= new int[size];
+f=-1;
+r=-1;
+}
+void Push(int n)
+{
+if(f==-1&&r==-1)
+{
+f=r=0;
+ar[f]=n;
+}
+else if(r== size-1)
+{System.out.println("OverFlow");}
+else
+{
+r++;
+ar[r]=n;
+}
+}
+void Pop()
+{
+if(f==-1)
+{
+System.out.println("Underflow");
+}
+else if(f==r)
+{
+System.out.println("No. deleted="+ ar[f]);
+f=-1;r=-1;
+}
+else    
+{
+System.out.println("No. deleted="+ ar[f]);
+f++;
+}
+}
+void Display()
+{
+for(int i=0; i<=r; i++)
+{
+System.out.print(ar[i]+",");
+System.out.println();
+}
+}
+}
