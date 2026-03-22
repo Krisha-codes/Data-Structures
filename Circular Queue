@@ -1,0 +1,68 @@
+class CQueue
+{
+int ar[],f,r,size;
+CQueue(int m)
+{
+size= m;
+ar= new int[size];
+f=r=-1;
+}
+void Push(int n)
+{
+if(f==-1)
+{
+f=r=0;
+ar[r]=n;
+}
+else if(r==size-1&&f>0)
+{
+r=0;
+ar[r]=n;
+}
+else if(f=0 && r==size-1 || f==r+1)
+{
+System.out.println("Overflow");
+}
+else
+{
+ar[++r]=n;
+}
+}
+void Pop()
+{
+if(f==-1)
+{
+System.out.println("Underflow");
+}
+else if(f==r)
+{
+System.out.println("No. Deleted"+ar[f]);
+f=r=-1;
+}
+else if(f==size-1 && r>0)
+{
+System.out.println("No. deleted="+ar[f]);
+f=0;
+}
+else
+{
+System.out.println("No. deleted="+ar[f]);
+f++;
+}
+}
+void Display()
+{
+if(f>r)
+{
+for(int i=f; i<size; i++)
+System.out.print(ar[i] + ",");
+for(int j=0; j<=r; j++)
+System.out.print(ar[j] + ",");
+}
+else
+{
+for(int i=f; i<=r; i++)
+System.out.print(ar[i] + ",");
+}
+}
+}
