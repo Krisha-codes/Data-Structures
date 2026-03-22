@@ -1,0 +1,61 @@
+class DQueue
+{
+int ar[], f,r,size;
+DQueue(int m)
+{
+size = m;
+ar= new int[size];
+f=r=-1;
+}
+void inFront(int n)
+{
+if(f==1)
+{
+System.out.println("Full from front");
+}
+else if(f==0)
+{
+ar[++f]=n;
+}
+else if(f>1)
+{
+ar[--f]=n;
+}
+}
+void inRear(int n)
+{
+if(r==size-1)
+System.out.println(Full from rear);
+else if(r==0)
+{
+ar[++r]=n;
+f++;
+}
+else
+{
+ar[++r]=n;
+}
+}
+void delF()
+{
+if(f==0||f>r)
+{System.out.println("Empty");}
+else
+{System.out.println("No. deleted"+ ar[++f]);}
+}
+void delR()
+{
+if(r==0||r<f)
+{Sytem.out.println("Empty");}
+else
+{
+System.outprintln("No. deleted="+ ar[r]);
+r--;
+}
+}
+void Display()
+{
+for(int i=f; i<=r; i++)
+System.out.print(ar[i]+",");
+}
+}
