@@ -1,0 +1,43 @@
+class stack
+//Last In First OUT(LIFO)
+{
+int ar[], top, size;
+stack(int m)
+{
+size=m;
+ar = new int [size];
+top=-1;
+}
+void Push(int n)//adding element n to the end
+{
+if (top==size-1)
+{
+System.out.println("Overflow");
+}
+else
+{
+top++;
+ar[top]=n;
+}
+}
+void Pop()//deleting element from the end
+{
+if(top == -1)
+{
+System.out.println("UnderFlow");
+}
+else
+{
+System.out.println("No. deleted="+ ar[top]);
+top--;
+}
+}
+void Display()
+{
+for(int i =0; i<=top; i++)
+{
+System.out.print(ar[i]+ ",");
+System.out.println();
+}
+}
+}
